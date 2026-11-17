@@ -53,5 +53,3 @@ benchmarks/         medições e figuras
 relatorio/          Trabalho_Final_ED2.pdf
 main.py             comparação a partir de um arquivo
 ```
-
-O repositório está privado. Para o professor abrir o endereço, adicione a conta dele em Settings → Collaborators, ou torne o repositório público na entrega.
