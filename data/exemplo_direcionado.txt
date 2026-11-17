@@ -1,0 +1,8 @@
+# Metadados: V E TIPO
+4 5 D
+# Arestas: u v peso
+A B 1
+A C 4
+B C 1
+B D 5
+C D 1

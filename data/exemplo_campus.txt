@@ -1,0 +1,14 @@
+# Metadados: V E TIPO
+8 11 ND
+# Arestas: u v peso
+CampusCentral BlocoEngenharia 3
+CampusCentral BlocoSaude 12
+CampusCentral DataCenter 5
+BlocoEngenharia LabIA 4
+BlocoEngenharia Biblioteca 6
+LabIA DataCenter 2
+LabIA ServidorBorda 8
+BlocoSaude HospitalEscola 7
+Biblioteca ServidorBorda 9
+DataCenter ServidorBorda 4
+ServidorBorda HospitalEscola 5

@@ -1,0 +1,1396 @@
+{
+  "protocolo": {
+    "tamanhos": [
+      1000,
+      10000,
+      50000
+    ],
+    "semente_documental": 20261117,
+    "tempo": "mediana de time.perf_counter, sem tracemalloc",
+    "memoria": "pico do tracemalloc numa execução separada, grafo já construído",
+    "par": "origem 0 e destino V-1",
+    "limite_recursao": 1000
+  },
+  "cenarios": [
+    {
+      "cenario": "uniforme",
+      "descricao": "pesos iguais a 1 na malha caminho+corda",
+      "vertices": 1000,
+      "arestas": 1997,
+      "origem": 0,
+      "destino": 999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 0.6459730000187847,
+          "memoria_kib": 112.4609375,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 500,
+            "saltos": 500,
+            "soma_pesos": 500,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 501,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "995",
+              "997",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 1.041084000007686,
+          "memoria_kib": 125.86328125,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 999,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.8028309999872363,
+          "memoria_kib": 373.1181640625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 1.1201419999906648,
+          "memoria_kib": 168.375,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 500,
+            "saltos": 500,
+            "soma_pesos": 500,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 501,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "995",
+              "997",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "bfs_igual_dijkstra": true
+      }
+    },
+    {
+      "cenario": "variado",
+      "descricao": "caminho com peso 1 e cordas com peso 100",
+      "vertices": 1000,
+      "arestas": 1997,
+      "origem": 0,
+      "destino": 999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 0.6984240000065256,
+          "memoria_kib": 112.3984375,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 500,
+            "saltos": 500,
+            "soma_pesos": 49901,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 501,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "995",
+              "997",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 1.3921560000653699,
+          "memoria_kib": 125.80078125,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 999,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.785157999985131,
+          "memoria_kib": 373.0556640625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 1.9179910000275413,
+          "memoria_kib": 180.5546875,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 101,
+            "arestas_examinadas": 3992,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "dijkstra_mais_barato": true,
+        "bfs_menos_saltos": true,
+        "dijkstra_segue_o_caminho": true
+      }
+    },
+    {
+      "cenario": "cadeia",
+      "descricao": "caminho único, fronteira constante",
+      "vertices": 1000,
+      "arestas": 999,
+      "origem": 0,
+      "destino": 999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 0.8287289999771019,
+          "memoria_kib": 117.859375,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 0.9129259999554051,
+          "memoria_kib": 117.1171875,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.8413059999838879,
+          "memoria_kib": 372.7900390625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 1.1605739999822617,
+          "memoria_kib": 174.265625,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 999,
+            "saltos": 999,
+            "soma_pesos": 999,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 1000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "997",
+              "998",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "caminho_unico": true,
+        "fronteira_bfs_constante": true,
+        "dfs_recursiva_estourou": true
+      }
+    },
+    {
+      "cenario": "estrela",
+      "descricao": "controle de retenção de fronteira",
+      "vertices": 1000,
+      "arestas": 999,
+      "origem": 0,
+      "destino": 999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 0.37029999998594576,
+          "memoria_kib": 100.72265625,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 999,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 0.435170999935508,
+          "memoria_kib": 91.29296875,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 999,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.454989999980171,
+          "memoria_kib": 94.890625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 1.022683999963192,
+          "memoria_kib": 163.83984375,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 1000,
+            "tamanho_max_fronteira": 999,
+            "arestas_examinadas": 1997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "fronteira_bfs_linear": true,
+        "fronteira_dfs_linear": true,
+        "dfs_recursiva_nao_estoura": true,
+        "profundidade_recursiva_pequena": true
+      }
+    },
+    {
+      "cenario": "uniforme",
+      "descricao": "pesos iguais a 1 na malha caminho+corda",
+      "vertices": 10000,
+      "arestas": 19997,
+      "origem": 0,
+      "destino": 9999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 8.014021000008142,
+          "memoria_kib": 1482.7109375,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 5000,
+            "saltos": 5000,
+            "soma_pesos": 5000,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 5001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "9995",
+              "9997",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 12.602921000052447,
+          "memoria_kib": 2002.10546875,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 9999,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.8228029998917918,
+          "memoria_kib": 373.1181640625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 12.604133999957412,
+          "memoria_kib": 2001.5625,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 5000,
+            "saltos": 5000,
+            "soma_pesos": 5000,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 5001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "9995",
+              "9997",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "bfs_igual_dijkstra": true
+      }
+    },
+    {
+      "cenario": "variado",
+      "descricao": "caminho com peso 1 e cordas com peso 100",
+      "vertices": 10000,
+      "arestas": 19997,
+      "origem": 0,
+      "destino": 9999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 6.777364000072339,
+          "memoria_kib": 1482.7109375,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 5000,
+            "saltos": 5000,
+            "soma_pesos": 499901,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 5001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "9995",
+              "9997",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 12.00064400006795,
+          "memoria_kib": 2002.10546875,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 9999,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.8413209999389437,
+          "memoria_kib": 372.7900390625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 21.393748000036794,
+          "memoria_kib": 2007.765625,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 101,
+            "arestas_examinadas": 39992,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "dijkstra_mais_barato": true,
+        "bfs_menos_saltos": true,
+        "dijkstra_segue_o_caminho": true
+      }
+    },
+    {
+      "cenario": "cadeia",
+      "descricao": "caminho único, fronteira constante",
+      "vertices": 10000,
+      "arestas": 9999,
+      "origem": 0,
+      "destino": 9999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 8.430883000073663,
+          "memoria_kib": 1482.1953125,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 8.991279000042596,
+          "memoria_kib": 1481.453125,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.801528000010876,
+          "memoria_kib": 372.7900390625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 12.147176999974363,
+          "memoria_kib": 2001.5390625,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 9999,
+            "saltos": 9999,
+            "soma_pesos": 9999,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 10000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "9997",
+              "9998",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "caminho_unico": true,
+        "fronteira_bfs_constante": true,
+        "dfs_recursiva_estourou": true
+      }
+    },
+    {
+      "cenario": "estrela",
+      "descricao": "controle de retenção de fronteira",
+      "vertices": 10000,
+      "arestas": 9999,
+      "origem": 0,
+      "destino": 9999,
+      "repeticoes": 5,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 7.941890999973111,
+          "memoria_kib": 1067.19140625,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 9999,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 9.297115999970629,
+          "memoria_kib": 1239.45703125,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 9999,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 4.64540300004046,
+          "memoria_kib": 1023.203125,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 10.58302299998104,
+          "memoria_kib": 1972.01171875,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 10000,
+            "tamanho_max_fronteira": 9999,
+            "arestas_examinadas": 19997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "9999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "fronteira_bfs_linear": true,
+        "fronteira_dfs_linear": true,
+        "dfs_recursiva_nao_estoura": true,
+        "profundidade_recursiva_pequena": true
+      }
+    },
+    {
+      "cenario": "uniforme",
+      "descricao": "pesos iguais a 1 na malha caminho+corda",
+      "vertices": 50000,
+      "arestas": 99997,
+      "origem": 0,
+      "destino": 49999,
+      "repeticoes": 3,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 37.73948900004598,
+          "memoria_kib": 7338.78125,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 25000,
+            "saltos": 25000,
+            "soma_pesos": 25000,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 25001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "49995",
+              "49997",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 59.91163200008032,
+          "memoria_kib": 10540.12109375,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 49999,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.902323999980581,
+          "memoria_kib": 373.1181640625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 70.5504430000019,
+          "memoria_kib": 11067.140625,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 25000,
+            "saltos": 25000,
+            "soma_pesos": 25000,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 25001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "49995",
+              "49997",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "bfs_igual_dijkstra": true
+      }
+    },
+    {
+      "cenario": "variado",
+      "descricao": "caminho com peso 1 e cordas com peso 100",
+      "vertices": 50000,
+      "arestas": 99997,
+      "origem": 0,
+      "destino": 49999,
+      "repeticoes": 3,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 36.256958000080886,
+          "memoria_kib": 7338.78125,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 25000,
+            "saltos": 25000,
+            "soma_pesos": 2499901,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 25001,
+            "caminho": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "...",
+              "49995",
+              "49997",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 59.47016999994048,
+          "memoria_kib": 10540.12109375,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 49999,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.8208909999893876,
+          "memoria_kib": 373.1181640625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 106.66379899998901,
+          "memoria_kib": 11217.0078125,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 101,
+            "arestas_examinadas": 199992,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "dijkstra_mais_barato": true,
+        "bfs_menos_saltos": true,
+        "dijkstra_segue_o_caminho": true
+      }
+    },
+    {
+      "cenario": "cadeia",
+      "descricao": "caminho único, fronteira constante",
+      "vertices": 50000,
+      "arestas": 49999,
+      "origem": 0,
+      "destino": 49999,
+      "repeticoes": 3,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 39.870361999987836,
+          "memoria_kib": 7481.9296875,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 44.700229000000036,
+          "memoria_kib": 7481.1875,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 0.7631180000089444,
+          "memoria_kib": 372.7900390625,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": false,
+            "estouro_pilha": true,
+            "custo": null,
+            "saltos": null,
+            "soma_pesos": null,
+            "nos_visitados": 994,
+            "tamanho_max_fronteira": 994,
+            "arestas_examinadas": 1985,
+            "vertices_no_caminho": 0,
+            "caminho": [],
+            "detalhe": "RecursionError: a pilha de chamadas do interpretador encheu"
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 58.96365299997797,
+          "memoria_kib": 11210.78125,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 49999,
+            "saltos": 49999,
+            "soma_pesos": 49999,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 1,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 50000,
+            "caminho": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "...",
+              "49997",
+              "49998",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "caminho_unico": true,
+        "fronteira_bfs_constante": true,
+        "dfs_recursiva_estourou": true
+      }
+    },
+    {
+      "cenario": "estrela",
+      "descricao": "controle de retenção de fronteira",
+      "vertices": 50000,
+      "arestas": 49999,
+      "origem": 0,
+      "destino": 49999,
+      "repeticoes": 3,
+      "aquecimento": 1,
+      "algoritmos": {
+        "bfs": {
+          "tempo_ms": 18.32756999999674,
+          "memoria_kib": 6632.03515625,
+          "resultado": {
+            "algoritmo": "bfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 49999,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs": {
+          "tempo_ms": 24.680893999970976,
+          "memoria_kib": 6310.77734375,
+          "resultado": {
+            "algoritmo": "dfs",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 49999,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dfs_recursivo": {
+          "tempo_ms": 22.795943000005536,
+          "memoria_kib": 6279.6171875,
+          "resultado": {
+            "algoritmo": "dfs_recursivo",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 2,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        },
+        "dijkstra": {
+          "tempo_ms": 61.733988000014506,
+          "memoria_kib": 12128.21484375,
+          "resultado": {
+            "algoritmo": "dijkstra",
+            "encontrado": true,
+            "estouro_pilha": false,
+            "custo": 1,
+            "saltos": 1,
+            "soma_pesos": 1,
+            "nos_visitados": 50000,
+            "tamanho_max_fronteira": 49999,
+            "arestas_examinadas": 99997,
+            "vertices_no_caminho": 2,
+            "caminho": [
+              "0",
+              "49999"
+            ],
+            "detalhe": ""
+          }
+        }
+      },
+      "invariantes": {
+        "bfs_encontrou": true,
+        "dfs_encontrou": true,
+        "dijkstra_encontrou": true,
+        "fronteira_bfs_linear": true,
+        "fronteira_dfs_linear": true,
+        "dfs_recursiva_nao_estoura": true,
+        "profundidade_recursiva_pequena": true
+      }
+    }
+  ]
+}
